@@ -1,0 +1,19 @@
+body{
+ background-color: #f4f4f4 ;
+
+}
+
+ul {
+  background: #EEE;
+  padding-top: 1em;
+  border-left: 5px solid #69c773;
+}
+a:link, a:visited { 
+  color: #69c773;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:link:active, a:visited:active { 
+  color: (internal value);
+}

@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from restaurants import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/',views.welcome ,name='hello-world'),
-    path('restaurants/list/',views.restaurant_list ,name='restaurant-list'),
-    path('restaurants/detail/<int:restaurant_id>/',views.restaurant_detail ,name='restaurant-detail'),
-    path('restaurants/create/',views.restaurant_create ,name='restaurant-create'),
+    path('',views.restaurant_list ,name='restaurant-list'),
+    path('detail/<int:restaurant_id>/',views.restaurant_detail ,name='restaurant-detail'),
+    path('create/',views.restaurant_create ,name='restaurant-create'),
 ]
+ 
+urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
